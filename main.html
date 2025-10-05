@@ -3,196 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shizuocha - Premium Japanese Tea</title>
-    <meta name="description" content="Premium Japanese matcha and tea from Shizuoka Prefecture. Hand-picked from Honyama tea gardens and delivered worldwide.">
+    <title>Matcha in Japan</title>
+    <meta name="description" content="Discover premium Matcha from different regions of Japan and convert colors between RGB and Hex.">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Georgia', serif; line-height: 1.6; color: #2d4a2b; background-color: #fafafa; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        header { background: linear-gradient(135deg, #2d5a2d, #4a7c4a); color: white; padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 2rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        nav ul { display: flex; list-style: none; gap: 2rem; }
-        nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        nav a:hover { color: #a8d5a8; }
-
-        .hero { background: linear-gradient(rgba(45, 90, 45, 0.7), rgba(74, 124, 74, 0.7)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shizuoka-tea-plantation-07.jpg-PNvlxEOqrr1w39UzPoGBDw9QrrAsQN.jpeg') center/cover; color: white; text-align: center; padding: 6rem 0; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .cta-button { display: inline-block; background: #6b8e6b; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 50px; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: none; cursor: pointer; }
-        .cta-button:hover { background: #5a7a5a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-
-        .showcase-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 2rem; }
-        .showcase-image { width: 100%; height: 350px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .highlight { background: linear-gradient(120deg, #a8d5a8 0%, #6b8e6b 100%); color: white; padding: 1rem; border-radius: 10px; font-weight: bold; margin-top: 1rem; }
-
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .feature-card { text-align: center; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .feature-card:hover { transform: translateY(-5px); }
-        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
-
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-        .product-image { width: 100%; height: 120px; object-fit: contain; background-color: #f8f9f8; padding: 15px; }
-        .product-info { padding: 1.5rem; }
-        .product-name { font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem; color: #2d4a2b; }
-        .product-description { color: #666; margin-bottom: 1rem; font-size: 0.95rem; }
-        .product-price { font-size: 1.2rem; font-weight: bold; color: #4a7c4a; margin-bottom: 1rem; }
-        .add-to-cart { width: 100%; background: #6b8e6b; color: white; border: none; padding: 0.8rem; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.3s; }
-        .add-to-cart:hover { background: #5a7a5a; }
-
-        .cart { position: fixed; top: 20px; right: 20px; background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); min-width: 200px; z-index: 1000; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #eee; }
-        .cart-total { font-weight: bold; margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #6b8e6b; }
-
-        section { padding: 4rem 0; }
-
-        .color-converter h3 { margin-bottom: 0.5rem; }
-        .color-converter label { display: block; margin-bottom: 0.3rem; }
-        .color-converter input { padding: 0.3rem; width: 80px; margin-right: 0.5rem; }
-
-        @media (max-width: 768px) { .showcase-content, .about-content { grid-template-columns: 1fr; } .cart { position: relative; top:auto; right:auto; margin:2rem auto; max-width:400px; } }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f8f8;
+            color: #2d4a2b;
+        }
+        header {
+            background: #6b8e6b;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        section {
+            padding: 3rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #4a7c4a;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .matcha-region {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .converter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .converter div {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 250px;
+        }
+        input[type="number"], input[type="text"] {
+            width: 80%;
+            padding: 0.3rem;
+            margin: 0.3rem 0;
+        }
+        button {
+            background: #4a7c4a;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #3b623b;
+        }
+        .result {
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #6b8e6b;
+            color: white;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">Shizuocha</div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#color-converter">Color Converter</a></li>
-                    </ul>
-                </nav>
-            </div>
+
+<header>
+    <h1>Discover Matcha Across Japan</h1>
+    <p>From Uji to Shizuoka: Exploring the finest green teas.</p>
+</header>
+
+<section>
+    <h2>Popular Matcha Regions</h2>
+
+    <div class="matcha-region">
+        <h3>Uji, Kyoto</h3>
+        <p>Uji is Japan’s most famous tea region. Known for its ceremonial grade Matcha, Uji Matcha is rich, smooth, and deeply aromatic. It has been cultivated since the 12th century.</p>
+    </div>
+
+    <div class="matcha-region">
+        <h3>Shizuoka</h3>
+        <p>Shizuoka Prefecture produces over 40% of Japan's tea. Its Matcha is vibrant green with a strong umami flavor, grown in the fertile valleys near Mount Fuji.</p>
+    </div>
+
+    <div class="matcha-region">
+        <h3>Nishio, Aichi</h3>
+        <p>Nishio is famous for high-quality Matcha used in both culinary and ceremonial purposes. Its powders are finely ground and known for their vivid color and delicate sweetness.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Color Converter (RGB ↔ Hex)</h2>
+    <p>Convert RGB colors to Hex format and vice versa.</p>
+
+    <div class="converter">
+        <div>
+            <h3>RGB to Hex</h3>
+            <label>R: <input type="number" id="r" min="0" max="255"></label><br>
+            <label>G: <input type="number" id="g" min="0" max="255"></label><br>
+            <label>B: <input type="number" id="b" min="0" max="255"></label><br>
+            <button onclick="rgbToHex()">Convert</button>
+            <div class="result" id="hexResult"></div>
         </div>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Shizuocha</h1>
-            <p>We personally pick the finest matcha from Honyama and throughout Shizuoka Prefecture, delivering authentic Japanese tea culture directly to customers worldwide through our online ordering system.</p>
-            <a href="#products" class="cta-button">Shop Our Premium Matcha</a>
+        <div>
+            <h3>Hex to RGB</h3>
+            <label>Hex: <input type="text" id="hex" placeholder="#00ff00"></label><br>
+            <button onclick="hexToRgb()">Convert</button>
+            <div class="result" id="rgbResult"></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Example Showcase -->
-    <section class="obuchi-showcase">
-        <div class="container">
-            <h2 class="section-title">Obuchi Tea Fields</h2>
-            <div class="showcase-content">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shizuoka-tea-plantation-07.jpg-PNvlxEOqrr1w39UzPoGBDw9QrrAsQN.jpeg" alt="Shizuoka Tea Plantation" class="showcase-image">
-                <div>
-                    <h3>The Most Photographed Tea Fields in Japan</h3>
-                    <p>Obuchi Sasaba in Fuji City is the most popular scenic spot where you can see both Mount Fuji and tea fields simultaneously.</p>
-                    <p class="highlight">Our tea comes from these very fields that have inspired countless artists and photographers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>
+    &copy; 2025 Japanese Matcha Explorer
+</footer>
 
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h2 class="section-title">Our Tea Collection</h2>
-            <div class="products-grid">
-                <div class="product-card" data-category="matcha">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Honyama%20ceremonial%20matcha-mkeDcQXYooLnYjwapVGctA93rQKqPz.webp" alt="Honyama Ceremonial Matcha" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Honyama Ceremonial Matcha</h3>
-                        <div class="product-price">$65.00</div>
-                        <button class="add-to-cart" onclick="addToCart('Honyama Ceremonial Matcha', 65.00)">Add to Cart</button>
-                    </div>
-                </div>
-                <!-- Add more products similarly -->
-            </div>
-        </div>
-    </section>
+<script>
+function rgbToHex() {
+    let r = document.getElementById('r').value;
+    let g = document.getElementById('g').value;
+    let b = document.getElementById('b').value;
+    if(r===''||g===''||b===''){ alert('Please enter all RGB values'); return; }
+    if(r<0||r>255||g<0||g>255||b<0||b>255){ alert('RGB values must be 0-255'); return; }
+    r = parseInt(r).toString(16).padStart(2,'0');
+    g = parseInt(g).toString(16).padStart(2,'0');
+    b = parseInt(b).toString(16).padStart(2,'0');
+    document.getElementById('hexResult').textContent = `Hex: #${r}${g}${b}`.toUpperCase();
+}
 
-    <!-- Color Converter Section -->
-    <section id="color-converter" class="color-converter" style="background:#f0f8f0;">
-        <div class="container">
-            <h2 class="section-title">Color Converter</h2>
-            <p class="section-subtitle">Convert colors between RGB and Hex formats easily.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:2rem;">
-                <div style="flex:1; min-width:250px; background:white; padding:1.5rem; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-                    <h3>RGB to Hex</h3>
-                    <label>R: <input type="number" id="r" min="0" max="255"></label>
-                    <label>G: <input type="number" id="g" min="0" max="255"></label>
-                    <label>B: <input type="number" id="b" min="0" max="255"></label>
-                    <button class="cta-button" onclick="convertRGBtoHex()" style="margin-top:0.5rem;">Convert</button>
-                    <div class="result" id="rgbHexResult" style="margin-top:0.5rem; font-weight:bold;"></div>
-                </div>
-                <div style="flex:1; min-width:250px; background:white; padding:1.5rem; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-                    <h3>Hex to RGB</h3>
-                    <label>Hex: <input type="text" id="hex" placeholder="#ff00ff"></label>
-                    <button class="cta-button" onclick="convertHexToRGB()" style="margin-top:0.5rem;">Convert</button>
-                    <div class="result" id="hexRGBResult" style="margin-top:0.5rem; font-weight:bold;"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+function hexToRgb() {
+    let hex = document.getElementById('hex').value.trim();
+    if(!/^#?[0-9A-Fa-f]{6}$/.test(hex)) { alert('Enter a valid 6-digit hex'); return; }
+    if(hex.startsWith('#')) hex = hex.slice(1);
+    const r = parseInt(hex.slice(0,2),16);
+    const g = parseInt(hex.slice(2,4),16);
+    const b = parseInt(hex.slice(4,6),16);
+    document.getElementById('rgbResult').textContent = `RGB: (${r}, ${g}, ${b})`;
+}
+</script>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Shizuocha. Bringing authentic Japanese tea culture to the world.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Shopping Cart
-        let cart = [];
-        let total = 0;
-        function addToCart(name, price) {
-            const existing = cart.find(item => item.name === name);
-            if(existing) existing.quantity++;
-            else cart.push({name, price, quantity:1});
-            updateCart();
-        }
-        function removeFromCart(name) { cart = cart.filter(item => item.name !== name); updateCart(); }
-        function updateCart() {
-            const cartItems = document.getElementById('cart-items');
-            const cartTotal = document.getElementById('cart-total');
-            if(!cartItems) return;
-            cartItems.innerHTML = '';
-            total = 0;
-            cart.forEach(item => {
-                const itemTotal = item.price*item.quantity;
-                total+=itemTotal;
-                const div = document.createElement('div');
-                div.className='cart-item';
-                div.innerHTML=`<div>${item.name}<br>$${item.price.toFixed(2)} x ${item.quantity}</div>
-                <button onclick="removeFromCart('${item.name}')" style="background:#ff4444;color:white;border:none;padding:0.2rem 0.5rem;border-radius:4px;cursor:pointer;">×</button>`;
-                cartItems.appendChild(div);
-            });
-            if(cartTotal) cartTotal.textContent=`Total: $${total.toFixed(2)}`;
-        }
-
-        // Color Converter
-        function convertRGBtoHex(){
-            const r = document.getElementById('r').value;
-            const g = document.getElementById('g').value;
-            const b = document.getElementById('b').value;
-            if(r===""||g===""||b===""||r<0||g<0||b<0||r>255||g>255||b>255){alert("Enter valid RGB (0-255)"); return;}
-            const hex="#"+((1<<24)+(parseInt(r)<<16)+(parseInt(g)<<8)+parseInt(b)).toString(16).slice(1).toUpperCase();
-            document.getElementById('rgbHexResult').textContent=`Hex: ${hex}`;
-        }
-        function convertHexToRGB(){
-            let hex=document.getElementById('hex').value.trim();
-            if(!/^#?[0-9A-Fa-f]{6}$/.test(hex)){alert("Enter valid Hex (#RRGGBB)"); return;}
-            hex=hex.replace("#","");
-            const bigint=parseInt(hex,16);
-            const r=(bigint>>16)&255;
-            const g=(bigint>>8)&255;
-            const b=bigint&255;
-            document.getElementById('hexRGBResult').textContent=`RGB: (${r}, ${g}, ${b})`;
-        }
-    </script>
 </body>
 </html>
